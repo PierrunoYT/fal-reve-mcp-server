@@ -1,0 +1,49 @@
+{
+  "name": "fal-reve-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for Reve - text-to-image model that generates detailed visual output closely following your instructions, with strong aesthetic quality and accurate text rendering",
+  "type": "module",
+  "main": "build/index.js",
+  "bin": "./build/index.js",
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "dev": "tsc --watch",
+    "start": "node build/index.js",
+    "test": "node test-server.js",
+    "get-path": "node get-path.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PierrunoYT/fal-reve-mcp-server.git"
+  },
+  "homepage": "https://github.com/PierrunoYT/fal-reve-mcp-server#readme",
+  "bugs": {
+    "url": "https://github.com/PierrunoYT/fal-reve-mcp-server/issues"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "reve",
+    "fal",
+    "fal-ai",
+    "image-generation",
+    "ai",
+    "text-rendering",
+    "typescript",
+    "model-context-protocol"
+  ],
+  "author": "PierrunoYT",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@fal-ai/client": "^1.0.0",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
