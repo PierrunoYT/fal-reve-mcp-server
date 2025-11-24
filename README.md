@@ -9,8 +9,6 @@ A Model Context Protocol (MCP) server that provides access to Reve - a text-to-i
 
 **🔗 Repository**: [https://github.com/PierrunoYT/fal-reve-mcp-server](https://github.com/PierrunoYT/fal-reve-mcp-server)
 
-> **🚀 Ready to use!** Pre-built executable included - no compilation required.
->
 > **✅ Enhanced Reliability**: Server handles missing API keys gracefully without crashes and includes robust error handling.
 
 ## Features
@@ -50,14 +48,14 @@ git clone https://github.com/PierrunoYT/fal-reve-mcp-server.git
 cd fal-reve-mcp-server
 ```
 
-### 3. Install Dependencies (Optional)
-
-The server is pre-built, but if you want to modify it:
+### 3. Install Dependencies and Build
 
 ```bash
 npm install
 npm run build
 ```
+
+This will compile the TypeScript source code to JavaScript in the `build/` directory.
 
 ## Configuration
 
@@ -84,10 +82,11 @@ npm run build
 
 **Benefits:**
 - ✅ **Universal Access**: Works on any machine with Node.js
-- ✅ **No Local Installation**: npx downloads and runs automatically
+- ✅ **No Local Installation**: npx downloads, builds, and runs automatically
 - ✅ **Always Latest Version**: Pulls from GitHub repository
 - ✅ **Cross-Platform**: Windows, macOS, Linux compatible
 - ✅ **Settings Sync**: Works everywhere you use your MCP client
+- ✅ **Auto-Build**: Automatically compiles TypeScript on first run
 
 ### Alternative: Local Installation
 
@@ -327,7 +326,7 @@ Generate an image with:
 ```
 ├── src/
 │   └── index.ts          # Main MCP server implementation
-├── build/                # Compiled JavaScript (ready to use)
+├── build/                # Compiled JavaScript (created after running npm run build)
 ├── test-server.js        # Server testing utility
 ├── get-path.js          # Configuration path helper
 ├── example-mcp-config.json # Example configuration
@@ -384,11 +383,13 @@ This server uses the FAL AI platform, which charges per image generation. Check 
 6. Ensure the Reve model is available in your region
 
 ### Build issues
-If you need to rebuild the server:
+If you encounter build errors or need to rebuild the server:
 ```bash
 npm install
 npm run build
 ```
+
+**Note**: The `build/` directory must exist before using the server. Make sure to run `npm run build` after cloning the repository.
 
 ### Configuration issues
 Use the helper script to get the correct path:
